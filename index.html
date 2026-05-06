@@ -143,9 +143,11 @@ body::before{
   background:linear-gradient(135deg,var(--green),var(--green-light));
   color:#fff;border:none;border-radius:var(--radius);
   font-size:15.5px;font-weight:800;cursor:pointer;transition:all .22s;
-  font-family:'DM Sans',inherit;letter-spacing:.01em;
+  font-family:'DM Sans',sans-serif;letter-spacing:.01em;
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 24px rgba(29,158,117,0.35);
 }
-.nbtn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent);opacity:0;transition:opacity .22s;}
+.nbtn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent);opacity:0;transition:opacity .22s;pointer-events:none;}
 .nbtn:hover:not(:disabled)::after{opacity:1;}
 .nbtn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 32px rgba(29,158,117,0.45);}
 .nbtn:disabled{opacity:.35;cursor:not-allowed;}
