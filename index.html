@@ -3,290 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iGreen Energy — Desconto na conta de luz em Minas Gerais</title>
-<meta name="description" content="Mineiro, descubra quanto você pode economizar todo mês na sua conta de luz com a iGreen Energy. Sem instalação, sem fidelidade, 100% gratuito.">
+<title>iGreen Energy — Desconto na conta de luz · Minas Gerais</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green:#1D9E75;
-  --green-light:#22c98c;
-  --green-dim:#0F6E56;
-  --green-bg:#E1F5EE;
-  --dark:#060f0b;
-  --surface:#1a2e22;
-  --surface2:#223529;
-  --border:rgba(29,158,117,0.18);
-  --border2:rgba(29,158,117,0.35);
-  --text:#f0faf5;
-  --text2:#9abfac;
-  --text3:#6a9580;
-  --radius:14px;
-  --radius-sm:10px;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1D9E75; --green-light: #17b87f; --green-dim: #0F6E56;
+  --dark: #ffffff; --surface: #f4faf7; --surface2: #e8f5ef;
+  --border: rgba(29,158,117,0.18); --border2: rgba(29,158,117,0.35);
+  --text: #0d1f17; --text2: #3a6650; --text3: #7aaa92;
+  --r: 14px; --rs: 10px;
 }
-html,body{min-height:100vh}
-body{
-  font-family:'DM Sans',-apple-system,sans-serif;
-  background:var(--dark);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-body::before{
-  content:'';position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -20%,rgba(29,158,117,0.22) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 40% at 100% 80%,rgba(29,158,117,0.1) 0%,transparent 50%);
-  pointer-events:none;z-index:0;
-}
-.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:1.5rem 1rem 3rem;}
-
-/* HEADER */
-.hd{text-align:center;padding:2rem 1rem 1.75rem;border-bottom:1px solid var(--border);margin-bottom:2rem;}
-.logo{max-width:160px;height:auto;display:block;margin:0 auto 1rem;filter:brightness(0) invert(1);}
-.hd-pills{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;}
-.pill{
-  display:inline-flex;align-items:center;gap:5px;
-  background:rgba(29,158,117,0.12);border:1px solid var(--border2);
-  color:var(--green-light);font-size:11.5px;font-weight:700;
-  padding:5px 11px;border-radius:99px;letter-spacing:.02em;
-}
-.pill svg{width:12px;height:12px;flex-shrink:0;}
-
-/* MG BADGE */
-.mg-badge{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  background:rgba(29,158,117,0.08);border:1px solid var(--border);
-  border-radius:var(--radius-sm);padding:.65rem 1rem;
-  margin-top:1rem;
-  font-size:12.5px;font-weight:700;color:var(--text2);
-}
-.mg-badge span{color:var(--green-light);}
-
-/* PROGRESS */
-.prog-wrap{margin-bottom:2rem;}
-.prog-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;}
-.prog-label{font-size:12px;color:var(--text3);font-weight:600;letter-spacing:.03em;text-transform:uppercase;}
-.prog-num{font-size:12px;color:var(--green);font-weight:700;}
-.prog-bar{height:4px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;}
-.prog-fill{
-  height:4px;
-  background:linear-gradient(90deg,var(--green),var(--green-light));
-  border-radius:99px;
-  transition:width .6s cubic-bezier(.4,0,.2,1);
-  box-shadow:0 0 12px rgba(34,201,140,0.5);
-}
-
-/* STEP */
-.step{display:none;}
-.step.active{display:block;animation:rise .42s cubic-bezier(.4,0,.2,1);}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-
-.step-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(29,158,117,0.1);border:1px solid var(--border2);
-  color:var(--green);font-size:11px;font-weight:800;
-  padding:4px 12px;border-radius:99px;margin-bottom:1.1rem;
-  letter-spacing:.04em;text-transform:uppercase;
-}
-.stitle{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:26px;font-weight:800;color:var(--text);
-  line-height:1.22;margin-bottom:.65rem;letter-spacing:-.01em;
-}
-.stitle em{
-  font-style:normal;
-  background:linear-gradient(90deg,var(--green-light),#7effd0);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.ssub{font-size:14.5px;color:var(--text2);line-height:1.65;margin-bottom:1.75rem;font-weight:500;}
-
-/* OPTIONS */
-.opts{display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.5rem;}
-.ob{
-  display:flex;align-items:center;gap:14px;
-  padding:14px 16px;background:var(--surface);
-  border:1.5px solid var(--border);border-radius:var(--radius);
-  cursor:pointer;text-align:left;
-  transition:all .22s cubic-bezier(.4,0,.2,1);
-  width:100%;font-family:inherit;position:relative;overflow:hidden;
-}
-.ob::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,158,117,0.08),transparent);opacity:0;transition:opacity .22s;}
-.ob:hover{border-color:var(--border2);transform:translateY(-1px);}
-.ob:hover::before{opacity:1;}
-.ob.selected{border-color:var(--green);background:var(--surface2);box-shadow:0 0 0 1px rgba(29,158,117,0.3),inset 0 0 30px rgba(29,158,117,0.06);}
-.ob.selected::before{opacity:1;}
-.oic{
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(29,158,117,0.12);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:18px;transition:all .22s;
-}
-.ob.selected .oic{background:rgba(29,158,117,0.2);border-color:var(--border2);}
-.otx{flex:1;min-width:0;}
-.olb{font-size:14.5px;font-weight:700;color:var(--text);line-height:1.3;}
-.ods{font-size:12px;color:var(--text3);margin-top:2px;font-weight:500;}
-.check-ic{
-  width:22px;height:22px;border-radius:50%;
-  border:1.5px solid var(--border);flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;transition:all .22s;
-}
-.ob.selected .check-ic{background:var(--green);border-color:var(--green);}
-.check-ic svg{width:11px;height:11px;opacity:0;transition:opacity .15s;}
-.ob.selected .check-ic svg{opacity:1;}
-
-/* BUTTON */
-.nbtn{
-  width:100%;padding:16px;
-  background:linear-gradient(135deg,var(--green),var(--green-light));
-  color:#fff;border:none;border-radius:var(--radius);
-  font-size:15.5px;font-weight:800;cursor:pointer;transition:all .22s;
-  font-family:'DM Sans',sans-serif;letter-spacing:.01em;
-  position:relative;overflow:hidden;
-  box-shadow:0 4px 24px rgba(29,158,117,0.35);
-}
-.nbtn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent);opacity:0;transition:opacity .22s;pointer-events:none;}
-.nbtn:hover:not(:disabled)::after{opacity:1;}
-.nbtn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 32px rgba(29,158,117,0.45);}
-.nbtn:disabled{opacity:.35;cursor:not-allowed;}
-
-/* FORM */
-.fgrp{margin-bottom:1rem;position:relative;}
-.flb{font-size:12.5px;color:var(--text2);margin-bottom:7px;display:block;font-weight:700;letter-spacing:.02em;text-transform:uppercase;}
-.finp,.fsel{
-  width:100%;padding:13px 16px;
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-sm);color:var(--text);
-  font-size:15px;font-family:inherit;font-weight:500;
-  transition:border-color .2s,box-shadow .2s;
-  -webkit-appearance:none;appearance:none;
-}
-.finp::placeholder{color:var(--text3);}
-.finp:focus,.fsel:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(29,158,117,0.15);}
-.fsel{
-  background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath fill='%231D9E75' d='M6 7L0 0h12z'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 16px center;
-  padding-right:38px;cursor:pointer;
-}
-.fsel:disabled{opacity:.4;cursor:not-allowed;}
-.fsel option{background:#1a2e22;color:#f0faf5;}
-
-/* CAMPO ESTADO TRAVADO */
-.estado-locked{
-  display:flex;align-items:center;gap:10px;
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-sm);padding:13px 16px;
-  font-size:15px;font-weight:600;color:var(--text2);
-}
-.estado-locked .lock-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:rgba(29,158,117,0.15);border:1px solid var(--border2);
-  color:var(--green-light);font-size:11px;font-weight:800;
-  padding:3px 9px;border-radius:99px;margin-left:auto;
-  letter-spacing:.03em;
-}
-
-.loading-cidade{position:absolute;right:38px;top:38px;font-size:11px;color:var(--green);font-weight:700;display:none;}
-.loading-cidade.show{display:block;}
-
-.trust-row{display:flex;flex-wrap:wrap;gap:.75rem;padding:1rem 0 .25rem;}
-.trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);font-weight:600;}
-.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0;}
-
-/* RESULT */
-.result-hero{text-align:center;padding:1.75rem 0 1.5rem;}
-.result-avatar{
-  width:64px;height:64px;border-radius:50%;
-  background:linear-gradient(135deg,var(--green-dim),var(--green));
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1rem;font-size:28px;
-  box-shadow:0 0 0 8px rgba(29,158,117,0.12),0 0 0 16px rgba(29,158,117,0.06);
-}
-.result-name{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:.3rem;}
-.result-sub{font-size:14px;color:var(--text2);font-weight:400;}
-
-.eco-card{
-  background:linear-gradient(135deg,rgba(29,158,117,0.14),rgba(29,158,117,0.06));
-  border:1.5px solid var(--border2);border-radius:var(--radius);
-  padding:1.5rem;text-align:center;margin:1rem 0;
-  position:relative;overflow:hidden;
-}
-.eco-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(29,158,117,0.2),transparent 70%);}
-.eco-label{font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
-.eco-value{
-  font-family:'Bricolage Grotesque',sans-serif;font-size:50px;font-weight:800;
-  background:linear-gradient(90deg,var(--green-light),#7effd0);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  line-height:1.05;margin-bottom:.3rem;
-}
-.eco-sub{font-size:13px;color:var(--text3);font-weight:500;}
-
-.cemig-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(29,158,117,0.1);border:1px solid var(--border);
-  color:var(--text3);font-size:11.5px;font-weight:700;
-  padding:4px 12px;border-radius:99px;margin-top:.6rem;
-}
-
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:1rem 0;}
-.stat{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1rem;text-align:center;}
-.stat-v{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--green-light);line-height:1.1;margin-bottom:4px;}
-.stat-l{font-size:11.5px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
-
-.benefits-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin:1rem 0;}
-.benefit-row{display:flex;align-items:flex-start;gap:10px;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
-.benefit-row:last-child{border-bottom:none;padding-bottom:0;}
-.benefit-row:first-child{padding-top:0;}
-.b-icon{width:26px;height:26px;border-radius:7px;background:rgba(29,158,117,0.15);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;margin-top:1px;}
-.b-text{font-size:13.5px;color:var(--text2);line-height:1.5;font-weight:500;}
-.b-text strong{color:var(--text);font-weight:700;}
-
-.alert-bar{display:flex;align-items:flex-start;gap:10px;background:rgba(255,193,7,0.08);border:1px solid rgba(255,193,7,0.25);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;color:#f5c842;margin-bottom:1rem;font-weight:500;line-height:1.5;}
-
-.divider{display:flex;align-items:center;gap:.75rem;margin:1.25rem 0;}
-.divider-line{flex:1;height:1px;background:var(--border);}
-.divider-text{font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
-
-.cta-label{text-align:center;font-size:13px;color:var(--text3);margin-bottom:.65rem;font-weight:500;}
-.wbtn{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;padding:18px;
-  background:linear-gradient(135deg,#1aaf58,#25D366);
-  color:#fff;border:none;border-radius:var(--radius);
-  font-size:16px;font-weight:800;cursor:pointer;text-decoration:none;
-  transition:all .22s;box-shadow:0 6px 28px rgba(37,211,102,0.35);
-  font-family:'DM Sans',sans-serif;letter-spacing:.01em;
-}
-.wbtn:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(37,211,102,0.45);}
-.footer-note{text-align:center;font-size:12px;color:var(--text3);margin-top:1rem;padding:0 1rem;font-weight:500;line-height:1.6;}
-
-@media(max-width:480px){
-  .wrap{padding:1rem .75rem 2.5rem;}
-  .stitle{font-size:22px;}
-  .eco-value{font-size:42px;}
-}
+html, body { min-height: 100vh; background: #ffffff; }
+body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; background-image: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(29,158,117,0.06) 0%, transparent 60%); }
+.wrap { max-width: 520px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+.hd { text-align: center; padding: 1.75rem 1rem 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; }
+.logo { max-width: 150px; height: auto; display: block; margin: 0 auto .9rem; }
+.hd-pills { display: flex; align-items: center; justify-content: center; gap: .45rem; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(29,158,117,0.08); border: 1px solid var(--border2); color: var(--green-dim); font-size: 11px; font-weight: 700; padding: 4px 11px; border-radius: 99px; }
+.mg-badge { display: flex; align-items: center; justify-content: center; gap: 7px; background: rgba(29,158,117,0.06); border: 1px solid var(--border); border-radius: var(--rs); padding: .6rem 1rem; margin-top: .9rem; font-size: 12px; font-weight: 700; color: var(--text2); }
+.mg-badge span { color: var(--green-dim); }
+.prog-wrap { margin-bottom: 1.75rem; }
+.prog-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: .55rem; }
+.prog-label { font-size: 11px; color: var(--text3); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.prog-num { font-size: 11px; color: var(--green); font-weight: 700; }
+.prog-bar { height: 3px; background: rgba(255,255,255,0.07); border-radius: 99px; overflow: hidden; }
+.prog-fill { height: 3px; background: linear-gradient(90deg, var(--green), var(--green-light)); border-radius: 99px; transition: width .5s ease; }
+.step { display: none; }
+.step.active { display: block; animation: rise .38s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.sbadge { display: inline-block; background: rgba(29,158,117,0.08); border: 1px solid var(--border2); color: var(--green-dim); font-size: 10.5px; font-weight: 800; padding: 4px 12px; border-radius: 99px; margin-bottom: 1rem; letter-spacing: .05em; text-transform: uppercase; }
+.stitle { font-family: 'Bricolage Grotesque', sans-serif; font-size: 25px; font-weight: 800; color: var(--text); line-height: 1.22; margin-bottom: .6rem; }
+.stitle em { font-style: normal; color: var(--green); }
+.ssub { font-size: 14px; color: var(--text2); line-height: 1.65; margin-bottom: 1.6rem; font-weight: 400; }
+.opts { display: flex; flex-direction: column; gap: .5rem; }
+.ob { display: flex; align-items: center; gap: 13px; padding: 13px 15px; background: #fff; border: 1.5px solid var(--border); border-radius: var(--r); cursor: pointer; text-align: left; width: 100%; font-family: 'DM Sans', sans-serif; transition: border-color .18s, background .18s; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.ob:hover { border-color: var(--green); background: var(--surface); box-shadow: 0 2px 12px rgba(29,158,117,0.1); }
+.ob.sel { border-color: var(--green); background: var(--surface2); box-shadow: 0 2px 12px rgba(29,158,117,0.12); }
+.oic { width: 38px; height: 38px; border-radius: 9px; background: rgba(29,158,117,0.08); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 17px; }
+.otx { flex: 1; min-width: 0; }
+.olb { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.ods { font-size: 11.5px; color: var(--text3); margin-top: 2px; font-weight: 400; }
+.chk { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #ccc; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .18s, border-color .18s; }
+.ob.sel .chk { background: var(--green); border-color: var(--green); }
+.chk-svg { width: 10px; height: 10px; display: none; }
+.ob.sel .chk-svg { display: block; }
+.btn { display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, var(--green-dim), var(--green)); color: #fff; border: none; border-radius: var(--r); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 1.4rem; box-shadow: 0 4px 20px rgba(29,158,117,0.25); transition: transform .18s, box-shadow .18s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(29,158,117,0.35); }
+.btn:disabled { opacity: .35; cursor: not-allowed; transform: none; box-shadow: none; }
+.fgrp { margin-bottom: .95rem; }
+.flb { display: block; font-size: 11.5px; color: var(--text2); font-weight: 700; letter-spacing: .03em; text-transform: uppercase; margin-bottom: 6px; }
+.finp, .fsel { display: block; width: 100%; padding: 13px 15px; background: #fff; border: 1.5px solid #d4e8de; border-radius: var(--rs); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 400; outline: none; transition: border-color .18s; -webkit-appearance: none; appearance: none; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.finp::placeholder { color: #aac8b8; }
+.finp:focus, .fsel:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(29,158,117,0.1); }
+.fsel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath fill='%231D9E75' d='M6 7L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; padding-right: 36px; cursor: pointer; background-color: #fff; }
+.fsel option { background: #fff; color: #0d1f17; }
+.estado-box { display: flex; align-items: center; justify-content: space-between; padding: 13px 15px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--rs); font-size: 15px; color: var(--text2); font-weight: 500; }
+.lock-tag { background: rgba(29,158,117,0.1); border: 1px solid var(--border2); color: var(--green-dim); font-size: 10.5px; font-weight: 800; padding: 3px 9px; border-radius: 99px; }
+.trust-row { display: flex; flex-wrap: wrap; gap: .6rem; padding: .85rem 0 .15rem; }
+.ti { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--text3); font-weight: 500; }
+.td { width: 4px; height: 4px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.r-hero { text-align: center; padding: 1.5rem 0 1.25rem; }
+.r-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--green-dim), var(--green)); display: flex; align-items: center; justify-content: center; margin: 0 auto .9rem; font-size: 26px; }
+.r-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 800; color: var(--text); margin-bottom: .25rem; }
+.r-sub { font-size: 13.5px; color: var(--text2); font-weight: 400; }
+.eco-card { background: linear-gradient(135deg, rgba(29,158,117,0.07), rgba(29,158,117,0.03)); border: 1.5px solid var(--border2); border-radius: var(--r); padding: 1.4rem; text-align: center; margin: 1rem 0; }
+.eco-lbl { font-size: 11px; color: var(--text2); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .4rem; }
+.eco-val { font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; font-weight: 800; color: var(--green); line-height: 1.05; margin-bottom: .2rem; }
+.eco-desc { font-size: 12.5px; color: var(--text2); }
+.cemig-tag { display: inline-block; background: rgba(29,158,117,0.07); border: 1px solid var(--border); color: var(--text3); font-size: 11px; font-weight: 700; padding: 4px 11px; border-radius: 99px; margin-top: .55rem; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: 1rem 0; }
+.stat { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--rs); padding: .9rem; text-align: center; }
+.sv { font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 800; color: var(--green); line-height: 1.1; margin-bottom: 3px; }
+.sl { font-size: 11px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.divider { display: flex; align-items: center; gap: .7rem; margin: 1.1rem 0; }
+.dl { flex: 1; height: 1px; background: var(--border); }
+.dt { font-size: 10.5px; color: var(--text3); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+.benefits { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r); padding: 1.1rem; margin: 1rem 0; }
+.brow { display: flex; align-items: flex-start; gap: 9px; padding: .5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.brow:last-child { border-bottom: none; padding-bottom: 0; }
+.brow:first-child { padding-top: 0; }
+.bico { width: 24px; height: 24px; border-radius: 7px; background: rgba(29,158,117,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.btx { font-size: 13px; color: var(--text2); line-height: 1.5; font-weight: 400; }
+.btx strong { color: var(--text); font-weight: 700; }
+.alert-box { display: flex; gap: 9px; background: #fff8e1; border: 1px solid #ffe082; border-radius: var(--rs); padding: 11px 13px; font-size: 13px; color: #7d5a00; margin-bottom: 1rem; line-height: 1.5; }
+.cta-hint { text-align: center; font-size: 12.5px; color: var(--text3); margin-bottom: .6rem; }
+.wbtn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 17px; background: linear-gradient(135deg, #1aaf58, #25D366); color: #fff; border: none; border-radius: var(--r); font-family: 'DM Sans', sans-serif; font-size: 15.5px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 6px 26px rgba(37,211,102,0.3); transition: transform .18s, box-shadow .18s; }
+.wbtn:hover { transform: translateY(-2px); }
+.fnote { text-align: center; font-size: 11.5px; color: var(--text3); margin-top: .9rem; line-height: 1.6; }
+@media (max-width: 480px) { .wrap { padding: 1rem .75rem 2.5rem; } .stitle { font-size: 21px; } .eco-val { font-size: 40px; } }
 </style>
 </head>
 <body>
-
 <div class="wrap">
-
-  <!-- HEADER -->
   <div class="hd">
     <img src="https://raw.githubusercontent.com/iagoaugustocrv21-cell/IGREEN-LOGO/main/logobrand.png" alt="iGreen Energy" class="logo">
     <div class="hd-pills">
-      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>100% gratuito</span>
-      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sem instalação</span>
-      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sem fidelidade</span>
+      <span class="pill">✓ 100% gratuito</span>
+      <span class="pill">✓ Sem instalação</span>
+      <span class="pill">✓ Sem fidelidade</span>
     </div>
-    <div class="mg-badge">
-      🌿 Disponível em todo o estado de <span>Minas Gerais</span> — via CEMIG
-    </div>
+    <div class="mg-badge">🌿 Exclusivo para <span>Minas Gerais</span> — via CEMIG</div>
   </div>
-
-  <!-- PROGRESS -->
   <div class="prog-wrap">
     <div class="prog-info">
       <span class="prog-label">Sua simulação</span>
@@ -295,295 +115,116 @@ body::before{
     <div class="prog-bar"><div class="prog-fill" id="prog" style="width:25%"></div></div>
   </div>
 
-  <!-- ─── ETAPA 1 ─────────────────────────── -->
   <div class="step active" id="s1">
-    <span class="step-badge">Etapa 1 de 4</span>
+    <span class="sbadge">Etapa 1 de 4</span>
     <p class="stitle">Quanto você paga de <em>conta de luz</em> por mês?</p>
-    <p class="ssub">A CEMIG cobra caro — e todo mineiro tem direito a pagar menos. Vamos calcular exatamente o quanto você pode economizar.</p>
+    <p class="ssub">A CEMIG cobra caro — e todo mineiro tem direito a pagar menos. Me conta o valor e eu calculo exatamente quanto você economiza.</p>
     <div class="opts">
-      <button class="ob" onclick="sel(this,'conta','30-80',55)">
-        <div class="oic">💡</div>
-        <div class="otx"><div class="olb">R$ 30 – R$ 80</div><div class="ods">Consumo baixo — ainda tem desconto todo mês</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'conta','80-150',115)">
-        <div class="oic">💡</div>
-        <div class="otx"><div class="olb">R$ 80 – R$ 150</div><div class="ods">Bom perfil — desconto chega direto na sua fatura</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'conta','150-300',225)">
-        <div class="oic">💡</div>
-        <div class="otx"><div class="olb">R$ 150 – R$ 300</div><div class="ods">Perfil ideal — economia expressiva todo mês</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'conta','300-500',400)">
-        <div class="oic">⚡</div>
-        <div class="otx"><div class="olb">R$ 300 – R$ 500</div><div class="ods">Alto consumo — economia equivale a uma cesta básica por mês</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'conta','500-800',650)">
-        <div class="oic">⚡</div>
-        <div class="otx"><div class="olb">R$ 500 – R$ 800</div><div class="ods">Consumo elevado — grande potencial de economia</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'conta','800+',1000)">
-        <div class="oic">🔥</div>
-        <div class="otx"><div class="olb">Acima de R$ 800</div><div class="ods">Potencial máximo — vai economizar muito todo mês</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
+      <button class="ob" onclick="pick(this,'conta','30-80',55,2)"><div class="oic">💡</div><div class="otx"><div class="olb">R$ 30 – R$ 80</div><div class="ods">Consumo baixo — ainda tem desconto todo mês</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'conta','80-150',115,2)"><div class="oic">💡</div><div class="otx"><div class="olb">R$ 80 – R$ 150</div><div class="ods">Bom perfil — desconto chega direto na sua fatura</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'conta','150-300',225,2)"><div class="oic">💡</div><div class="otx"><div class="olb">R$ 150 – R$ 300</div><div class="ods">Perfil ideal — economia expressiva todo mês</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'conta','300-500',400,2)"><div class="oic">⚡</div><div class="otx"><div class="olb">R$ 300 – R$ 500</div><div class="ods">Alto consumo — economia de uma cesta básica por mês</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'conta','500-800',650,2)"><div class="oic">⚡</div><div class="otx"><div class="olb">R$ 500 – R$ 800</div><div class="ods">Consumo elevado — grande potencial de economia</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'conta','800+',1000,2)"><div class="oic">🔥</div><div class="otx"><div class="olb">Acima de R$ 800</div><div class="ods">Potencial máximo — vai economizar muito todo mês</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
     </div>
   </div>
 
-  <!-- ─── ETAPA 2 ─────────────────────────── -->
   <div class="step" id="s2">
-    <span class="step-badge">Etapa 2 de 4</span>
+    <span class="sbadge">Etapa 2 de 4</span>
     <p class="stitle">A conta de luz está <em>no seu nome</em>?</p>
-    <p class="ssub">O desconto é aplicado diretamente na fatura do titular — sem intermediários, sem burocracia.</p>
+    <p class="ssub">O desconto é aplicado direto na fatura do titular — sem intermediários, sem burocracia.</p>
     <div class="opts">
-      <button class="ob" onclick="sel(this,'titular','sim',0)">
-        <div class="oic">✅</div>
-        <div class="otx"><div class="olb">Sim, está no meu nome</div><div class="ods">Perfeito! Você pode aderir agora mesmo</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'titular','nao',0)">
-        <div class="oic">👤</div>
-        <div class="otx"><div class="olb">Não, está no nome de outra pessoa</div><div class="ods">Ainda temos opções — nosso especialista vai te orientar</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
+      <button class="ob" onclick="pick(this,'titular','sim',0,3)"><div class="oic">✅</div><div class="otx"><div class="olb">Sim, está no meu nome</div><div class="ods">Perfeito! Você pode aderir agora mesmo</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'titular','nao',0,3)"><div class="oic">👤</div><div class="otx"><div class="olb">Não, está no nome de outra pessoa</div><div class="ods">Ainda podemos verificar opções para você</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
     </div>
   </div>
 
-  <!-- ─── ETAPA 3 ─────────────────────────── -->
   <div class="step" id="s3">
-    <span class="step-badge">Etapa 3 de 4</span>
+    <span class="sbadge">Etapa 3 de 4</span>
     <p class="stitle">Qual é o tipo do <em>seu imóvel</em>?</p>
-    <p class="ssub">Residências, comércios e imóveis rurais têm condições específicas. Vamos encontrar a melhor para você.</p>
+    <p class="ssub">Residências, comércios e rurais têm condições específicas — vamos encontrar a melhor para você.</p>
     <div class="opts">
-      <button class="ob" onclick="sel(this,'imovel','residencia',0)">
-        <div class="oic">🏠</div>
-        <div class="otx"><div class="olb">Residência</div><div class="ods">Casa ou apartamento</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'imovel','comercio',0)">
-        <div class="oic">🏪</div>
-        <div class="otx"><div class="olb">Comércio ou empresa</div><div class="ods">Loja, escritório, empresa, restaurante</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
-      <button class="ob" onclick="sel(this,'imovel','rural',0)">
-        <div class="oic">🌱</div>
-        <div class="otx"><div class="olb">Rural / Sítio / Chácara</div><div class="ods">Área rural ou propriedade agrícola</div></div>
-        <div class="check-ic"><svg viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.2"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div>
-      </button>
+      <button class="ob" onclick="pick(this,'imovel','residencia',0,4)"><div class="oic">🏠</div><div class="otx"><div class="olb">Residência</div><div class="ods">Casa ou apartamento</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'imovel','comercio',0,4)"><div class="oic">🏪</div><div class="otx"><div class="olb">Comércio ou empresa</div><div class="ods">Loja, escritório, empresa, restaurante</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
+      <button class="ob" onclick="pick(this,'imovel','rural',0,4)"><div class="oic">🌱</div><div class="otx"><div class="olb">Rural / Sítio / Chácara</div><div class="ods">Área rural ou propriedade agrícola</div></div><div class="chk"><svg class="chk-svg" viewBox="0 0 12 10" fill="none" stroke="white" stroke-width="2.5"><polyline points="1 5 4.5 8.5 11 1.5"/></svg></div></button>
     </div>
   </div>
 
-  <!-- ─── ETAPA 4 ─────────────────────────── -->
   <div class="step" id="s4">
-    <span class="step-badge">Quase lá! Etapa 4 de 4</span>
+    <span class="sbadge">Quase lá! Etapa 4 de 4</span>
     <p class="stitle">Onde enviamos <em>sua simulação</em>?</p>
-    <p class="ssub">Sem spam, sem enrolação. Um especialista iGreen confirma seu desconto real pelo WhatsApp.</p>
+    <p class="ssub">Sem spam. Um especialista iGreen confirma seu desconto real pelo WhatsApp.</p>
     <div class="fgrp">
-      <label class="flb">Nome completo</label>
-      <input class="finp" id="inp-nome" type="text" placeholder="Como podemos te chamar?" oninput="chkForm()">
+      <label class="flb" for="inp-nome">Nome completo</label>
+      <input class="finp" id="inp-nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name" oninput="chkForm()">
     </div>
     <div class="fgrp">
-      <label class="flb">WhatsApp (com DDD)</label>
-      <input class="finp" id="inp-fone" type="tel" placeholder="(31) 99999-9999" oninput="mPhone(this);chkForm()">
+      <label class="flb" for="inp-fone">WhatsApp (com DDD)</label>
+      <input class="finp" id="inp-fone" type="tel" placeholder="(31) 99999-9999" autocomplete="tel" oninput="fmtFone(this);chkForm()">
     </div>
     <div class="fgrp">
       <label class="flb">Estado</label>
-      <div class="estado-locked">
-        🌿 Minas Gerais (MG)
-        <span class="lock-badge">📍 Fixado</span>
-      </div>
+      <div class="estado-box">🌿 Minas Gerais (MG)<span class="lock-tag">📍 Fixado</span></div>
     </div>
     <div class="fgrp">
-      <label class="flb">Cidade</label>
-      <span class="loading-cidade" id="loading-cidade">Carregando...</span>
+      <label class="flb" for="inp-cidade">Cidade</label>
       <select class="fsel" id="inp-cidade" onchange="chkForm()">
-        <option value="">Selecione sua cidade</option>
+        <option value="">Carregando cidades...</option>
       </select>
     </div>
     <div class="trust-row">
-      <span class="trust-item"><span class="trust-dot"></span>Zero custo para aderir</span>
-      <span class="trust-item"><span class="trust-dot"></span>Sem trocar fios ou medidores</span>
-      <span class="trust-item"><span class="trust-dot"></span>Cancele quando quiser</span>
-      <span class="trust-item"><span class="trust-dot"></span>Desconto automático todo mês</span>
+      <span class="ti"><span class="td"></span>Zero custo para aderir</span>
+      <span class="ti"><span class="td"></span>Sem trocar fios</span>
+      <span class="ti"><span class="td"></span>Cancele quando quiser</span>
+      <span class="ti"><span class="td"></span>Desconto automático todo mês</span>
     </div>
-    <div style="height:.9rem"></div>
-    <button class="nbtn" id="n4" disabled onclick="showResult()">Ver minha economia agora →</button>
+    <button class="btn" id="btn-ver" disabled onclick="showResult()">Ver minha economia agora →</button>
   </div>
 
-  <!-- ─── RESULTADO ─────────────────────────── -->
   <div class="step" id="sresult">
-    <div class="result-hero">
-      <div class="result-avatar">☀️</div>
-      <p class="result-name" id="r-name">Parabéns! Você é elegível</p>
-      <p class="result-sub">Seu desconto iGreen está calculado abaixo</p>
+    <div class="r-hero">
+      <div class="r-avatar">☀️</div>
+      <p class="r-title" id="r-title">Você é elegível ao desconto iGreen!</p>
+      <p class="r-sub">Confira o quanto você economiza todo mês</p>
     </div>
-
-    <div id="alert-nao-titular" class="alert-bar" style="display:none">
-      <span>⚠️</span>
-      <span>A conta não está no seu nome, mas ainda temos opções. Nosso especialista vai te orientar pelo WhatsApp.</span>
-    </div>
-
+    <div class="alert-box" id="alert-titular" style="display:none"><span>⚠️</span><span>A conta não está no seu nome, mas ainda temos opções. Um especialista vai te orientar pelo WhatsApp.</span></div>
     <div class="eco-card">
-      <p class="eco-label">Economia estimada por mês</p>
-      <p class="eco-value" id="eco-mes">—</p>
-      <p class="eco-sub">Com <strong id="pct-desc" style="color:var(--green-light)">—</strong>% de desconto na sua conta CEMIG</p>
-      <div class="cemig-tag">⚡ Distribuidora: CEMIG · Minas Gerais</div>
+      <p class="eco-lbl">Economia estimada por mês</p>
+      <p class="eco-val" id="eco-mes">—</p>
+      <p class="eco-desc">Com <strong id="pct-val" style="color:var(--green-light)">—</strong>% de desconto na sua conta CEMIG</p>
+      <span class="cemig-tag">⚡ CEMIG · Minas Gerais</span>
     </div>
-
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-v" id="eco-ano">—</div><div class="stat-l">Em 12 meses</div></div>
-      <div class="stat"><div class="stat-v" id="eco-5a">—</div><div class="stat-l">Em 5 anos</div></div>
-      <div class="stat"><div class="stat-v" id="nova-conta">—</div><div class="stat-l">Nova conta estimada</div></div>
-      <div class="stat"><div class="stat-v" id="conta-atual">—</div><div class="stat-l">Conta atual</div></div>
+    <div class="stats">
+      <div class="stat"><div class="sv" id="eco-ano">—</div><div class="sl">Em 12 meses</div></div>
+      <div class="stat"><div class="sv" id="eco-5a">—</div><div class="sl">Em 5 anos</div></div>
+      <div class="stat"><div class="sv" id="nova-conta">—</div><div class="sl">Nova conta</div></div>
+      <div class="stat"><div class="sv" id="conta-atual">—</div><div class="sl">Conta atual</div></div>
     </div>
-
-    <div class="divider"><div class="divider-line"></div><span class="divider-text">Como funciona</span><div class="divider-line"></div></div>
-
-    <div class="benefits-card">
-      <div class="benefit-row">
-        <div class="b-icon">✅</div>
-        <div class="b-text"><strong>Sem custo de adesão</strong> — 100% gratuito do início ao fim</div>
-      </div>
-      <div class="benefit-row">
-        <div class="b-icon">🔌</div>
-        <div class="b-text"><strong>Sem trocar fios ou medidores</strong> — usa a mesma rede da CEMIG que você já tem</div>
-      </div>
-      <div class="benefit-row">
-        <div class="b-icon">📅</div>
-        <div class="b-text"><strong>Sem fidelidade</strong> — cancele quando quiser, sem multa e sem burocracia</div>
-      </div>
-      <div class="benefit-row">
-        <div class="b-icon">☀️</div>
-        <div class="b-text"><strong>Energia 100% solar</strong> — você economiza e ainda cuida do meio ambiente</div>
-      </div>
-      <div class="benefit-row">
-        <div class="b-icon">📲</div>
-        <div class="b-text"><strong>Acompanhe tudo no app iGreen Club</strong> — desconto, boleto e cashback na palma da mão</div>
-      </div>
+    <div class="divider"><div class="dl"></div><span class="dt">Como funciona</span><div class="dl"></div></div>
+    <div class="benefits">
+      <div class="brow"><div class="bico">✅</div><div class="btx"><strong>Sem custo de adesão</strong> — 100% gratuito do início ao fim</div></div>
+      <div class="brow"><div class="bico">🔌</div><div class="btx"><strong>Sem trocar fios ou medidores</strong> — usa a mesma rede da CEMIG</div></div>
+      <div class="brow"><div class="bico">📅</div><div class="btx"><strong>Sem fidelidade</strong> — cancele quando quiser, sem multa</div></div>
+      <div class="brow"><div class="bico">☀️</div><div class="btx"><strong>Energia 100% solar</strong> — você economiza e cuida do planeta</div></div>
+      <div class="brow"><div class="bico">📲</div><div class="btx"><strong>App iGreen Club</strong> — desconto, boleto e cashback na palma da mão</div></div>
     </div>
-
-    <p class="cta-label">👇 Fale agora com um especialista e garanta seu desconto</p>
-    <a id="wlink" class="wbtn" target="_blank" rel="noopener">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <p class="cta-hint">👇 Fale agora com um especialista e garanta seu desconto</p>
+    <a id="wlink" class="wbtn" href="#" target="_blank" rel="noopener">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       Garantir meu desconto agora
     </a>
-    <p class="footer-note">Atendimento gratuito por especialista certificado iGreen em Minas Gerais.<br>Sem spam · Sem fidelidade · Sem custo algum.</p>
+    <p class="fnote">Atendimento gratuito por especialista certificado iGreen em Minas Gerais.<br>Sem spam · Sem fidelidade · Sem custo algum.</p>
   </div>
-
 </div>
-
 <script>
-var WHATSAPP_NUMERO = '5511999999999';
-var PCT_CEMIG = 0.28;
-var d = {};
-var TOTAL_STEPS = 4;
-
-function sel(btn,key,val,extra){
-  btn.closest('.opts').querySelectorAll('.ob').forEach(function(b){b.classList.remove('selected')});
-  btn.classList.add('selected');
-  d[key]=val;
-  if(key==='conta') d.base=extra;
-  var sn=btn.closest('.step').id.replace('s','');
-  var nextMap={'1':2,'2':3,'3':4};
-  if(nextMap[sn]){
-    setTimeout(function(){ go(nextMap[sn]); }, 320);
-  }
-}
-
-function go(n){
-  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
-  document.getElementById('s'+n).classList.add('active');
-  var pct=n==='result'?100:Math.round((n/TOTAL_STEPS)*100);
-  document.getElementById('prog').style.width=pct+'%';
-  document.getElementById('prog-txt').textContent=n==='result'?'Simulação concluída ✓':'Etapa '+n+' de '+TOTAL_STEPS;
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function mPhone(el){
-  var v=el.value.replace(/\D/g,'');
-  if(v.length>11) v=v.slice(0,11);
-  if(v.length>7) v='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
-  else if(v.length>2) v='('+v.slice(0,2)+') '+v.slice(2);
-  el.value=v;
-}
-
-function chkForm(){
-  var n=document.getElementById('inp-nome').value.trim();
-  var f=document.getElementById('inp-fone').value.replace(/\D/g,'');
-  var c=document.getElementById('inp-cidade').value;
-  document.getElementById('n4').disabled=!(n.length>2&&f.length>=10&&c);
-}
-
-function fmt(v){
-  return 'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0});
-}
-
-function loadCidadesMG(){
-  var selC=document.getElementById('inp-cidade');
-  var loading=document.getElementById('loading-cidade');
-  loading.classList.add('show');
-  fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/MG/municipios?orderBy=nome')
-    .then(function(r){return r.json();})
-    .then(function(mun){
-      loading.classList.remove('show');
-      mun.forEach(function(m){
-        var opt=document.createElement('option');
-        opt.value=m.nome;opt.textContent=m.nome;
-        selC.appendChild(opt);
-      });
-    })
-    .catch(function(){
-      loading.classList.remove('show');
-      selC.innerHTML='<option value="">Erro ao carregar — recarregue a página</option>';
-    });
-}
-
-function showResult(){
-  d.nome=document.getElementById('inp-nome').value.trim();
-  d.fone=document.getElementById('inp-fone').value;
-  d.cidade=document.getElementById('inp-cidade').value;
-
-  var base=d.base||150;
-  var pct=PCT_CEMIG;
-  var eco=Math.round(base*pct);
-  var nova=Math.round(base-eco);
-  var ecoAno=eco*12;
-  var eco5=eco*60;
-  var firstName=d.nome.split(' ')[0];
-
-  document.getElementById('r-name').textContent=firstName+', você economiza '+fmt(eco)+' todo mês!';
-  document.getElementById('eco-mes').textContent=fmt(eco);
-  document.getElementById('eco-ano').textContent=fmt(ecoAno);
-  document.getElementById('eco-5a').textContent=fmt(eco5);
-  document.getElementById('pct-desc').textContent=Math.round(pct*100);
-  document.getElementById('nova-conta').textContent=fmt(nova)+'/mês';
-  document.getElementById('conta-atual').textContent=fmt(base)+'/mês';
-
-  if(d.titular==='nao') document.getElementById('alert-nao-titular').style.display='flex';
-
-  var faixas={'30-80':'R$ 30 – R$ 80','80-150':'R$ 80 – R$ 150','150-300':'R$ 150 – R$ 300','300-500':'R$ 300 – R$ 500','500-800':'R$ 500 – R$ 800','800+':'Acima de R$ 800'};
-  var imoveis={'residencia':'Residência','comercio':'Comércio','rural':'Rural / Sítio'};
-
-  var msg='🌱 Olá! Simulei meu desconto pelo quiz iGreen e quero garantir minha adesão.\n\n'
-    +'👤 *Nome:* '+d.nome+'\n'
-    +'📍 *Cidade:* '+d.cidade+' - MG\n'
-    +'🔌 *Distribuidora:* CEMIG\n'
-    +'💰 *Conta média:* '+(faixas[d.conta]||d.conta)+'\n'
-    +'🏠 *Imóvel:* '+(imoveis[d.imovel]||'-')+'\n'
-    +'📋 *Titular:* '+(d.titular==='sim'?'Sim':'Não')+'\n\n'
-    +'💡 *Economia estimada:* '+fmt(eco)+'/mês ('+Math.round(pct*100)+'% de desconto)\n\n'
-    +'Pode me ajudar com o cadastro?';
-
-  document.getElementById('wlink').href='https://wa.me/'+WHATSAPP_NUMERO+'?text='+encodeURIComponent(msg);
-
-  go('result');
-}
-
-loadCidadesMG();
+var WA='5511999999999',PCT=0.28,d={};
+function pick(btn,key,val,base,next){btn.closest('.opts').querySelectorAll('.ob').forEach(function(b){b.classList.remove('sel')});btn.classList.add('sel');d[key]=val;if(base)d.base=base;setTimeout(function(){goTo(next)},300)}
+function goTo(n){document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});document.getElementById(n==='result'?'sresult':'s'+n).classList.add('active');var p={1:25,2:50,3:75,4:90,result:100};document.getElementById('prog').style.width=(p[n]||25)+'%';var l={1:'Etapa 1 de 4',2:'Etapa 2 de 4',3:'Etapa 3 de 4',4:'Etapa 4 de 4',result:'Simulação concluída ✓'};document.getElementById('prog-txt').textContent=l[n]||'';window.scrollTo({top:0,behavior:'smooth'})}
+function fmtFone(el){var v=el.value.replace(/\D/g,'');if(v.length>11)v=v.slice(0,11);if(v.length>7)v='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);else if(v.length>2)v='('+v.slice(0,2)+') '+v.slice(2);el.value=v}
+function chkForm(){var ok=document.getElementById('inp-nome').value.trim().length>2&&document.getElementById('inp-fone').value.replace(/\D/g,'').length>=10&&document.getElementById('inp-cidade').value!=='';document.getElementById('btn-ver').disabled=!ok}
+function fmt(v){return'R$ '+Math.round(v).toLocaleString('pt-BR')}
+function showResult(){d.nome=document.getElementById('inp-nome').value.trim();d.fone=document.getElementById('inp-fone').value;d.cidade=document.getElementById('inp-cidade').value;var base=d.base||150,eco=Math.round(base*PCT),nova=base-eco,first=d.nome.split(' ')[0];document.getElementById('r-title').textContent=first+', você economiza '+fmt(eco)+' todo mês!';document.getElementById('eco-mes').textContent=fmt(eco);document.getElementById('eco-ano').textContent=fmt(eco*12);document.getElementById('eco-5a').textContent=fmt(eco*60);document.getElementById('pct-val').textContent=Math.round(PCT*100);document.getElementById('nova-conta').textContent=fmt(nova)+'/mês';document.getElementById('conta-atual').textContent=fmt(base)+'/mês';if(d.titular==='nao')document.getElementById('alert-titular').style.display='flex';var f={'30-80':'R$30–80','80-150':'R$80–150','150-300':'R$150–300','300-500':'R$300–500','500-800':'R$500–800','800+':'Acima de R$800'},im={'residencia':'Residência','comercio':'Comércio','rural':'Rural/Sítio'};var msg='🌱 Olá! Simulei meu desconto no quiz iGreen e quero garantir minha adesão.\n\n👤 *Nome:* '+d.nome+'\n📍 *Cidade:* '+d.cidade+' - MG\n🔌 *Distribuidora:* CEMIG\n💰 *Conta média:* '+(f[d.conta]||d.conta)+'\n🏠 *Imóvel:* '+(im[d.imovel]||'-')+'\n📋 *Titular:* '+(d.titular==='sim'?'Sim':'Não')+'\n\n💡 *Economia estimada:* '+fmt(eco)+'/mês ('+Math.round(PCT*100)+'% de desconto)\n\nPode me ajudar com o cadastro?';document.getElementById('wlink').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);goTo('result')}
+fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/MG/municipios?orderBy=nome').then(function(r){return r.json()}).then(function(list){var sel=document.getElementById('inp-cidade');sel.innerHTML='<option value="">Selecione sua cidade</option>';list.forEach(function(m){var o=document.createElement('option');o.value=m.nome;o.textContent=m.nome;sel.appendChild(o)})}).catch(function(){document.getElementById('inp-cidade').innerHTML='<option value="">Erro ao carregar — recarregue</option>'});
 </script>
 </body>
 </html>
